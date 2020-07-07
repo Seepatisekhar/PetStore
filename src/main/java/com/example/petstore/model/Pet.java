@@ -3,6 +3,10 @@ package com.example.petstore.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * @author hemas
+ *
+ */
 @Entity
 public class Pet {
 

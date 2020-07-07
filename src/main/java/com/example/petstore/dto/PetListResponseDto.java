@@ -2,6 +2,10 @@ package com.example.petstore.dto;
 
 import java.util.List;
 
+/**
+ * @author hemas
+ *
+ */
 public class PetListResponseDto {
 
 	private String message;

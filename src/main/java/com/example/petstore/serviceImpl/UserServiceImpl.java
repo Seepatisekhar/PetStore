@@ -10,6 +10,10 @@ import com.example.petstore.exception.InvalidCredentialsException;
 import com.example.petstore.model.User;
 import com.example.petstore.service.UserService;
 
+/**
+ * @author hemas
+ *
+ */
 @Service
 public class UserServiceImpl implements UserService {
 	private static Log logger = LogFactory.getLog(UserServiceImpl.class);
@@ -17,12 +21,10 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao userDao;
 
-	/**
-	 *
-	 */
+	
 	@Override
 	public boolean authenticateUser(String userName, String password) throws InvalidCredentialsException {
-		logger.info("implementaion of authenticating the user");
+		logger.info(" authenticating the user");
 		User user = userDao.findByUserNameAndPassword(userName, password);
 		if (user != null)
 			return true;

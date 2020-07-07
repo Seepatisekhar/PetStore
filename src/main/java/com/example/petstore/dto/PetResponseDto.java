@@ -1,5 +1,9 @@
 package com.example.petstore.dto;
 
+/**
+ * @author hemas
+ *
+ */
 public class PetResponseDto {
 
 	private String petName;

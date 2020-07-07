@@ -2,6 +2,10 @@ package com.example.petstore.dto;
 
 import javax.validation.constraints.NotEmpty;
 
+/**
+ * @author hemas
+ *
+ */
 public class LoginDto {
 
 	@NotEmpty(message = "userName must not be empty")

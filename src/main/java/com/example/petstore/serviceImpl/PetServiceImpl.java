@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,17 +18,20 @@ import com.example.petstore.exception.InvalidCredentialsException;
 import com.example.petstore.model.Pet;
 import com.example.petstore.service.PetService;
 
+/**
+ * @author hemas
+ *
+ */
 @Service
 public class PetServiceImpl implements PetService {
+	Log logger = LogFactory.getLog(PetServiceImpl.class);
 
 	@Autowired
 	PetDao petDao;
 
-	/**
-	 *
-	 */
 	@Override
 	public PetListResponseDto getPetsByPetName(String petName) throws InvalidCredentialsException {
+		logger.info(" Enter correct PetName");
 
 		PetListResponseDto petListResponseDto = new PetListResponseDto();
 		Optional<List<Pet>> petDetails = petDao.findAllByPetName(petName);
@@ -51,5 +56,4 @@ public class PetServiceImpl implements PetService {
 		return petDetailsResponse;
 	}
 
-	
 }

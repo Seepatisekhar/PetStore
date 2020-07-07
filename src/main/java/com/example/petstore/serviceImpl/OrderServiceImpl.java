@@ -3,6 +3,8 @@ package com.example.petstore.serviceImpl;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -14,8 +16,13 @@ import com.example.petstore.exception.InvalidCredentialsException;
 import com.example.petstore.model.Purchase;
 import com.example.petstore.model.User;
 import com.example.petstore.service.OrderService;
+/**
+ * @author hemas
+ *
+ */
 @Service
 public class OrderServiceImpl implements OrderService {
+	Log logger = LogFactory.getLog(OrderServiceImpl.class);
 
 	
 		@Autowired
@@ -27,6 +34,7 @@ public class OrderServiceImpl implements OrderService {
 
 		@Override
 		public OrderResponse orderPetsByPetId(int userId, int petId) throws InvalidCredentialsException {
+			logger.info(" Enter correct userId And petId");
 
 			Purchase orderPets = new Purchase();
 			OrderResponse orderResponseDto = new OrderResponse();

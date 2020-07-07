@@ -1,5 +1,7 @@
 package com.example.petstore.controller;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,7 @@ import com.example.petstore.service.PetService;
 public class PetController {
 	@Autowired
 	PetService petService;
+	private static Log logger = LogFactory.getLog(PetController.class);
 
 	/**
 	 * @param petName
@@ -24,6 +27,8 @@ public class PetController {
 	@GetMapping("/pet")
 	public ResponseEntity<PetListResponseDto> searchPets(@RequestParam("petName") String petName)
 			throws InvalidCredentialsException {
+		logger.info("dispalying list of pets");
+
 		PetListResponseDto petDetailsResponse = petService.getPetsByPetName(petName);
 		return new ResponseEntity<>(petDetailsResponse, HttpStatus.OK);
 	}

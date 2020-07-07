@@ -1,5 +1,9 @@
 package com.example.petstore.exception;
 
+/**
+ * @author hemas
+ *
+ */
 public class ErrorResponse {
 
 	private int statusCode;

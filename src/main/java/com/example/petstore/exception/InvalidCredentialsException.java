@@ -1,5 +1,9 @@
 package com.example.petstore.exception;
 
+/**
+ * @author hemas
+ *
+ */
 public class InvalidCredentialsException extends Exception {
 
 	private static final long serialVersionUID = 1L;
