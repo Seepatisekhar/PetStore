@@ -25,7 +25,7 @@ public class PetController {
 	public ResponseEntity<PetListResponseDto> searchPets(@RequestParam("petName") String petName)
 			throws InvalidCredentialsException {
 		PetListResponseDto petDetailsResponse = petService.getPetsByPetName(petName);
-		return new ResponseEntity<PetListResponseDto>(petDetailsResponse, HttpStatus.OK);
+		return new ResponseEntity<>(petDetailsResponse, HttpStatus.OK);
 	}
 
 }
