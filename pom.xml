@@ -17,6 +17,14 @@
 	<properties>
 		<java.version>1.8</java.version>
 		 <jacoco.version>0.8.3</jacoco.version>
+		 <sonar.coverage.exclusions>
+        src/main/java/com/example/OnlinePetStore/UserserviceApplication.java,
+        src/main/java/com/example/OnlinePetStore/dao/*.java,
+        src/main/java/com/example/OnlinePetStore/dto/*.java,
+        src/main/java/com/example/OnlinePetStore/exception/*.java,
+        src/main/java/com/example/OnlinePetStore/model/*.java,
+        src/main/java/com/example/OnlinePetStore/service/*.java,foo/**/*,**/bar/*
+        </sonar.coverage.exclusions>
 	</properties>
 
 	<dependencies>
